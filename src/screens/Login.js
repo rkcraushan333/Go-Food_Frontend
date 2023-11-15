@@ -15,8 +15,8 @@ export default function Login() {
             .then((response) => {
                 // success login
                 if (response.status === 200 && response.data.authToken) {
-                    localStorage.setItem("userEmail", credentials.email);
-                    localStorage.setItem("authToken", response.data.authToken);
+                    // localStorage.setItem("userEmail", credentials.email);
+                    // localStorage.setItem("authToken", response.data.authToken);
                     localStorage.getItem("authToken");
                     navigate("/")
                 }
