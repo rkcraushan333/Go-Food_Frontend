@@ -11,7 +11,7 @@ export default function Login() {
     const URL = "https://go-food-backend-lgih.onrender.com/api/LoginUser"
     const handleSubmit = async (event) => {
         event.preventDefault();
-        await axios(URL, credentials)
+        await axios.post(URL, credentials)
             .then((response) => {
                 // success login
                 localStorage.setItem("userEmail", credentials.email);
@@ -24,30 +24,7 @@ export default function Login() {
                 console.log("wrong credentials");
             })
     }
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault();
-    //     const response = await fetch(URL, {
-    //         method: "POST",
-    //         headers: {
-    //             'Content-Type': "application/json",
-    //         },
-    //         body: JSON.stringify({
-    //             email: credentials.email,
-    //             password: credentials.password,
-    //         }),
-    //     });
-    //     const json = await response.json();
-    //     console.log(json);
-    //     if (!json.success) {
-    //         alert("Enter valid credentials");
-    //     }
-    //     if (json.success) {
-    //         localStorage.setItem("userEmail", credentials.email);
-    //         localStorage.setItem("authToken", json.authToken);
-    //         localStorage.getItem("authToken");
-    //         navigate("/");
-    //     }
-    // };
+
     const onChange = (e) => {
         setcredentials({ ...credentials, [e.target.name]: e.target.value });
     };
@@ -93,3 +70,28 @@ export default function Login() {
         </>
     )
 }
+
+// const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     const response = await fetch(URL, {
+//         method: "POST",
+//         headers: {
+//             'Content-Type': "application/json",
+//         },
+//         body: JSON.stringify({
+//             email: credentials.email,
+//             password: credentials.password,
+//         }),
+//     });
+//     const json = await response.json();
+//     console.log(json);
+//     if (!json.success) {
+//         alert("Enter valid credentials");
+//     }
+//     if (json.success) {
+//         localStorage.setItem("userEmail", credentials.email);
+//         localStorage.setItem("authToken", json.authToken);
+//         localStorage.getItem("authToken");
+//         navigate("/");
+//     }
+// };
