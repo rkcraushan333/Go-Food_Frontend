@@ -17,12 +17,12 @@ export default function Login() {
                 localStorage.setItem("userEmail", credentials.email);
                 localStorage.setItem("authToken", response.authToken);
                 localStorage.getItem("authToken");
-                navigate("/")
             })
             .catch((error) => {
                 // error in login
                 console.log("wrong credentials");
             })
+        navigate("/")
     }
     // const handleSubmit = async (e) => {
     //     e.preventDefault();
