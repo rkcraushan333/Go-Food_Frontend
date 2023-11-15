@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Card from "../components/Card";
+import axios from "axios";
 
 export default function Home() {
   const [search, setsearch] = useState('');
@@ -9,18 +10,19 @@ export default function Home() {
   const [foodItems, setfoodItems] = useState([]);
 
   const URL_foodData = "https://go-food-backend-lgih.onrender.com/api/foodData";
+
   const loadData = async () => {
-    let response = await fetch(URL_foodData, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    response = await response.json();
-    setfoodItems(response[0]);
-    setfoodCat(response[1]);
-    // console.log(response[0], response[1]);
-  };
+    await axios.post(URL_foodData)
+      .then((response) => {
+        // on succefull fetching
+        const [fooditems, foodcat] = response.data;
+        setfoodItems(fooditems);
+        setfoodCat(foodcat);
+
+      }).catch((error) => {
+        console.log("error loading data");
+      })
+  }
 
   useEffect(() => {
     loadData();
@@ -108,7 +110,7 @@ export default function Home() {
       </div>
       <div className="container">
         {
-          foodCat !== [] ? foodCat.map((data) => {
+          foodCat.length !== 0 ? foodCat.map((data) => {
             return (
               <div className="row mb-3">
                 <div key={data._id} className="fs-3 m-3">
@@ -141,3 +143,16 @@ export default function Home() {
     </div>
   );
 }
+
+// const loadData = async () => {
+//   let response = await fetch(URL_foodData, {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//   });
+//   response = await response.json();
+//   setfoodItems(response[0]);
+//   setfoodCat(response[1]);
+//   // console.log(response[0], response[1]);
+// };

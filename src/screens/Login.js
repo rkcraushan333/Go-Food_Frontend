@@ -75,28 +75,3 @@ export default function Login() {
         </>
     )
 }
-
-// const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     const response = await fetch(URL, {
-//         method: "POST",
-//         headers: {
-//             'Content-Type': "application/json",
-//         },
-//         body: JSON.stringify({
-//             email: credentials.email,
-//             password: credentials.password,
-//         }),
-//     });
-//     const json = await response.json();
-//     console.log(json);
-//     if (!json.success) {
-//         alert("Enter valid credentials");
-//     }
-//     if (json.success) {
-//         localStorage.setItem("userEmail", credentials.email);
-//         localStorage.setItem("authToken", json.authToken);
-//         localStorage.getItem("authToken");
-//         navigate("/");
-//     }
-// };
