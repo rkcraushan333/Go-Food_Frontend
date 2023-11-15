@@ -49,12 +49,6 @@ export default function Home() {
                   value={search}
                   onChange={(e) => { setsearch(e.target.value) }}
                 />
-                {/* <button
-                className="btn btn-outline-success text-white bg-success"
-                type="submit"
-              >
-                Search
-              </button> */}
               </div>
             </div>
             <div className="carousel-item active">
@@ -143,16 +137,3 @@ export default function Home() {
     </div>
   );
 }
-
-// const loadData = async () => {
-//   let response = await fetch(URL_foodData, {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//   });
-//   response = await response.json();
-//   setfoodItems(response[0]);
-//   setfoodCat(response[1]);
-//   // console.log(response[0], response[1]);
-// };
