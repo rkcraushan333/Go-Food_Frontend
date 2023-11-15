@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function Singup() {
   let navigate = useNavigate();
@@ -10,32 +11,45 @@ export default function Singup() {
     geolocation: "",
   });
   const URL = "https://go-food-backend-lgih.onrender.com/api/CreateUser"
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const response = await fetch(URL, {
-      method: "POST",
-      headers: {
-        'Content-Type': "application/json",
-      },
-      body: JSON.stringify({
-        name: credentials.name,
-        email: credentials.email,
-        password: credentials.password,
-        location: credentials.geolocation,
-      }),
-    });
-    const json = await response.json();
-    console.log(json);
-    if (!json.success) {
-      alert("Enter valid credentials");
-    }
-  };
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   const response = await fetch(URL, {
+  //     method: "POST",
+  //     headers: {
+  //       'Content-Type': "application/json",
+  //     },
+  //     body: JSON.stringify({
+  //       name: credentials.name,
+  //       email: credentials.email,
+  //       password: credentials.password,
+  //       location: credentials.geolocation,
+  //     }),
+  //   });
+  //   const json = await response.json();
+  //   console.log(json);
+  //   if (!json.success) {
+  //     alert("Enter valid credentials");
+  //   }
+  // };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    await axios.post(URL, credentials)
+      .then(function (response) {
+        // handling success response
+        navigate('/login')
+        console.log(response);
+      })
+      .catch(function (err) {
+        //error 
+        console.error(err);
+      })
+  }
   const onChange = (e) => {
     setcredentials({ ...credentials, [e.target.name]: e.target.value });
   };
-  const handleSubmits = () => {
-    navigate("/login")
-  }
+  // const handleSubmits = () => {
+  //   navigate("/login")
+  // }
   return (
     <>
       <div className="container">
@@ -94,7 +108,7 @@ export default function Singup() {
               onChange={onChange}
             />
           </div>
-          <button type="submit" className="m-3 btn btn-success" onClick={handleSubmits}>
+          <button type="submit" className="m-3 btn btn-success">
             Submit
           </button>
           <Link to="/login" className="m-3 btn btn-danger">
