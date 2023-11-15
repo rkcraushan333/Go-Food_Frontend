@@ -14,10 +14,15 @@ export default function Login() {
         await axios.post(URL, credentials)
             .then((response) => {
                 // success login
-                localStorage.setItem("userEmail", credentials.email);
-                localStorage.setItem("authToken", response.authToken);
-                localStorage.getItem("authToken");
-                navigate("/")
+                if (response.status === 200 && response.data.authToken) {
+                    localStorage.setItem("userEmail", credentials.email);
+                    localStorage.setItem("authToken", response.data.authToken);
+                    localStorage.getItem("authToken");
+                    navigate("/")
+                }
+                else {
+                    console.log("wrong credentials");
+                }
             })
             .catch((error) => {
                 // error in login
