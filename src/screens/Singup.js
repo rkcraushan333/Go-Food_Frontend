@@ -11,26 +11,6 @@ export default function Singup() {
     geolocation: "",
   });
   const URL = "https://go-food-backend-lgih.onrender.com/api/CreateUser"
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   const response = await fetch(URL, {
-  //     method: "POST",
-  //     headers: {
-  //       'Content-Type': "application/json",
-  //     },
-  //     body: JSON.stringify({
-  //       name: credentials.name,
-  //       email: credentials.email,
-  //       password: credentials.password,
-  //       location: credentials.geolocation,
-  //     }),
-  //   });
-  //   const json = await response.json();
-  //   console.log(json);
-  //   if (!json.success) {
-  //     alert("Enter valid credentials");
-  //   }
-  // };
   const handleSubmit = async (event) => {
     event.preventDefault();
     await axios.post(URL, credentials)
@@ -47,9 +27,6 @@ export default function Singup() {
   const onChange = (e) => {
     setcredentials({ ...credentials, [e.target.name]: e.target.value });
   };
-  // const handleSubmits = () => {
-  //   navigate("/login")
-  // }
   return (
     <>
       <div className="container">
