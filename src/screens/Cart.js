@@ -1,5 +1,6 @@
 import React from "react";
-// import Delete from "@material-ui/icons/Delete";
+import axios from "axios";
+
 import { useCart, useDispatchCart } from "../components/ContextReducer";
 export default function Cart() {
   let data = useCart();
@@ -19,23 +20,36 @@ export default function Cart() {
   const cartURL = "https://go-food-backend-lgih.onrender.com/api/orderData";
   let userEmail = localStorage.getItem("userEmail");
 
+  // const handleCheckOut = async () => {
+  //   let response = await fetch(cartURL, {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({
+  //       order_data: data,
+  //       email: userEmail,
+  //       order_date: new Date().toDateString(),
+  //     }),
+  //   });
+  //   // console.log("JSON RESPONSE:::::", response.status);
+  //   if (response.status === 200) {
+  //     dispatch({ type: "DROP" });
+  //   }
+  // };
+
   const handleCheckOut = async () => {
-    let response = await fetch(cartURL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        order_data: data,
-        email: userEmail,
-        order_date: new Date().toDateString(),
-      }),
-    });
-    // console.log("JSON RESPONSE:::::", response.status);
-    if (response.status === 200) {
-      dispatch({ type: "DROP" });
-    }
-  };
+    const bodyData = { order_data: data, email: userEmail, order_date: new Date().toDateString() }
+    await axios.post(cartURL, bodyData)
+      .then((response) => {
+        if (response.status === 200) {
+          dispatch({ type: "DROP" });
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  }
 
   let totalPrice = data.reduce((total, food) => total + food.price, 0);
   return (
