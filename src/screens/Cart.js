@@ -12,31 +12,9 @@ export default function Cart() {
       </div>
     );
   }
-  // const handleRemove = (index)=>{
-  //   console.log(index)
-  //   dispatch({type:"REMOVE",index:index})
-  // }
 
   const cartURL = "https://go-food-backend-lgih.onrender.com/api/orderData";
   let userEmail = localStorage.getItem("userEmail");
-
-  // const handleCheckOut = async () => {
-  //   let response = await fetch(cartURL, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({
-  //       order_data: data,
-  //       email: userEmail,
-  //       order_date: new Date().toDateString(),
-  //     }),
-  //   });
-  //   // console.log("JSON RESPONSE:::::", response.status);
-  //   if (response.status === 200) {
-  //     dispatch({ type: "DROP" });
-  //   }
-  // };
 
   const handleCheckOut = async () => {
     const bodyData = { order_data: data, email: userEmail, order_date: new Date().toDateString() }
@@ -77,12 +55,7 @@ export default function Cart() {
                 <td>{food.price}</td>
                 <td>
                   <button type="button" className="btn p-0">
-                    {/* <Delete
-                      onClick={() => {
-                        dispatch({ type: "REMOVE", index: index });
-                      }}
-                    /> */}
-                  </button>{" "}
+                  </button>
                 </td>
               </tr>
             ))}
