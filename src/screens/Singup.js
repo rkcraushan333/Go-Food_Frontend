@@ -11,18 +11,17 @@ export default function Singup() {
     geolocation: "",
   });
   const URL = "https://go-food-backend-lgih.onrender.com/api/CreateUser"
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     await axios.post(URL, credentials)
       .then(function (response) {
-        // handling success response
-        const responseCheck = response.data;
-        if (responseCheck.errors) {
-          // console.log(responseCheck.errors);
+        // handling response
+        console.log(response);
+        if (response.status === 409) {
+          prompt("User Already exists")
         }
-        else {
-          navigate('/login')
-        }
+        // navigate('/login')
       })
       .catch(function (err) {
         //error 
