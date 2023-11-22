@@ -18,9 +18,9 @@ export default function Singup() {
       .then(function (response) {
         // handling response
         console.log(response);
-        // if (response.status === 409) {
-        //   prompt("User Already exists")
-        // }
+        if (response.status === 409) {
+          prompt("User Already exists")
+        }
         // navigate('/login')
       })
       .catch(function (err) {
