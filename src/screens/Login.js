@@ -22,12 +22,15 @@ export default function Login() {
                 }
                 else {
                     alert("Enter Valid Credentials!")
+                    setcredentials({});
                 }
             })
             .catch((error) => {
                 // error in login
-                if (error.status === 400)
+                if (error.status === 400) {
                     alert("Enter Valid Credentials!")
+                    setcredentials({});
+                }
             })
     }
 
