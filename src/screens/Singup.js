@@ -16,9 +16,13 @@ export default function Singup() {
     await axios.post(URL, credentials)
       .then(function (response) {
         // handling success response
-        // if(response.m)
-        navigate('/login')
-        console.log(response);
+        const responseCheck = response.data;
+        if (responseCheck.errors) {
+          // console.log(responseCheck.errors);
+        }
+        else {
+          navigate('/login')
+        }
       })
       .catch(function (err) {
         //error 
