@@ -27,10 +27,8 @@ export default function Login() {
             })
             .catch((error) => {
                 // error in login
-                if (error.status === 400) {
-                    alert("Enter Valid Credentials!")
-                    setcredentials({});
-                }
+                alert("Enter Valid Credentials!")
+                setcredentials({});
             })
     }
 
