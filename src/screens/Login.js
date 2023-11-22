@@ -22,13 +22,11 @@ export default function Login() {
                 }
                 else {
                     alert("Enter Valid Credentials!")
-                    setcredentials({ email: "", password: "" });
                 }
             })
             .catch((error) => {
                 // error in login
                 alert("Enter Valid Credentials!")
-                setcredentials({});
             })
     }
 
