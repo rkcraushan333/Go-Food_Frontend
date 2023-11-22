@@ -16,20 +16,17 @@ export default function Singup() {
     event.preventDefault();
     await axios.post(URL, credentials)
       .then(function (response) {
-        // handling successfull response
+        // handling response
         // console.log(response);
+        if (response.status === 201) {
+          prompt("Already existing User");
+        }
         navigate('/login')
       })
       .catch(function (err) {
         //error 
-        if (err.status === 409) {
-          prompt("Already existing User");
-          navigate('/login')
-        }
-        else {
-          prompt("Enter valid details!");
-          console.log(err.message);
-        }
+        prompt("Enter valid details!");
+        console.log(err.message);
       })
   }
   const onChange = (e) => {
