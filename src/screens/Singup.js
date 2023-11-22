@@ -17,7 +17,7 @@ export default function Singup() {
     await axios.post(URL, credentials)
       .then(function (response) {
         // handling response
-        // console.log(response);
+        console.log(response);
         if (response.status === 409) {
           prompt("User Already exists")
         }
@@ -25,7 +25,7 @@ export default function Singup() {
       })
       .catch(function (err) {
         //error 
-        console.error(err);
+        // console.error(err);
       })
   }
   const onChange = (e) => {
