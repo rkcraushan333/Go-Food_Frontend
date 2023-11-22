@@ -19,7 +19,7 @@ export default function Singup() {
         // handling response
         // console.log(response);
         if (response.status === 201) {
-          prompt("Already existing User");
+          console.log("Already existing User");
         }
         navigate('/login')
       })
