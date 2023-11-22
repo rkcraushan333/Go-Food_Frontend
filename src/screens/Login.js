@@ -21,12 +21,12 @@ export default function Login() {
                     navigate("/")
                 }
                 else {
-                    console.log("wrong credentials");
+                    alert("Enter Valid Credentials!")
                 }
             })
             .catch((error) => {
                 // error in login
-                console.log("wrong credentials");
+                alert("Enter Valid Credentials!")
             })
     }
 
