@@ -25,7 +25,7 @@ export default function Singup() {
       })
       .catch(function (err) {
         //error 
-        prompt("Enter valid details!");
+        alert("Enter valid details!");
         console.log(err.message);
       })
   }
