@@ -13,7 +13,7 @@ export default function Cart() {
     );
   }
 
-  const cartURL = "https://go-food-backend-lgih.onrender.com/api/orderData";
+  const cartURL = "/api/orderData";
   let userEmail = localStorage.getItem("userEmail");
 
   const handleCheckOut = async () => {

@@ -10,7 +10,7 @@ export default function Singup() {
     password: "",
     geolocation: "",
   });
-  const URL = "https://go-food-backend-lgih.onrender.com/api/CreateUser"
+  const URL = "/api/CreateUser"
 
   const handleSubmit = async (event) => {
     event.preventDefault();

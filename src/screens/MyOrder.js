@@ -6,7 +6,7 @@ import axios from "axios";
 export default function MyOrder() {
   const [orderData, setOrderData] = useState({});
 
-  const URL = "https://go-food-backend-lgih.onrender.com/api/myOrderData";
+  const URL = "/api/myOrderData";
 
   const fetchMyOrder = async () => {
     // fetching the email from my localstorage

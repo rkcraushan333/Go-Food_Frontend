@@ -8,7 +8,7 @@ export default function Login() {
         email: "",
         password: "",
     });
-    const URL = "https://go-food-backend-lgih.onrender.com/api/LoginUser"
+    const URL = "/api/LoginUser"
     const handleSubmit = async (event) => {
         event.preventDefault();
         await axios.post(URL, credentials)

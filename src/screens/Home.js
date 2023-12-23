@@ -9,7 +9,7 @@ export default function Home() {
   const [foodCat, setfoodCat] = useState([]);
   const [foodItems, setfoodItems] = useState([]);
 
-  const URL_foodData = "https://go-food-backend-lgih.onrender.com/api/foodData";
+  const URL_foodData = "/api/foodData";
 
   const loadData = async () => {
     await axios.post(URL_foodData)
