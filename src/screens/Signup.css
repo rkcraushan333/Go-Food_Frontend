@@ -1,0 +1,11 @@
+form{
+    margin:auto;
+    margin-top: 100px;
+    width: 50%;
+    height: 67%;
+    padding: 20px;
+    background: rgb(143, 198, 141);
+    border: 5px solid black;
+    border-radius: 4px;
+    box-shadow : 0 8px 16px rgba(0,0,0,3);
+}

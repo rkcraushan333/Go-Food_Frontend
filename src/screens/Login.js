@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
+import './Login.css'
+
 
 export default function Login() {
     let navigate = useNavigate();
@@ -35,7 +37,7 @@ export default function Login() {
     };
     return (
         <>
-            <div className="container">
+            <div className="container1">
                 <form onSubmit={handleSubmit}>
                     <div className="mb-3">
                         <label htmlFor="exampleInputEmail1" className="form-label">
@@ -64,10 +66,10 @@ export default function Login() {
                             onChange={onChange}
                         />
                     </div>
-                    <button type="submit" className="m-3 btn btn-success">
+                    <button type="submit" className="m-3 btn btn-primary">
                         Login
                     </button>
-                    <Link to="/signup" className="m-3 btn btn-danger">
+                    <Link to="/signup" className="m-3 btn btn-success">
                         I'm a new User
                     </Link>
                 </form>

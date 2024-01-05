@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import './Signup.css'
 
 export default function Singup() {
   let navigate = useNavigate();
@@ -90,10 +91,10 @@ export default function Singup() {
               onChange={onChange}
             />
           </div>
-          <button type="submit" className="m-3 btn btn-success">
+          <button type="submit" className="l-3 btn btn-primary">
             Submit
           </button>
-          <Link to="/login" className="m-3 btn btn-danger">
+          <Link to="/login" className="m-3 btn btn-success">
             Already a User
           </Link>
         </form>
