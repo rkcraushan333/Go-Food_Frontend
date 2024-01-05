@@ -69,7 +69,7 @@ export default function Login() {
                     <button type="submit" className="m-3 btn btn-primary">
                         Login
                     </button>
-                    <Link to="/signup" className="m-3 btn btn-success">
+                    <Link to="/signup" className="m-3 btn btn-warning">
                         I'm a new User
                     </Link>
                 </form>

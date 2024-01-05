@@ -4,8 +4,8 @@
     width: 40%;
     height: 40%;
     padding: 20px;
-    background: rgb(143, 198, 141);
-    border: 5px solid black;
+    background: #20c997;
+    border: 5px solid rgb(135, 222, 72);
     border-radius: 4px;
     box-shadow : 0 8px 16px rgba(0,0,0,3);
 }

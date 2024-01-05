@@ -94,7 +94,7 @@ export default function Singup() {
           <button type="submit" className="l-3 btn btn-primary">
             Submit
           </button>
-          <Link to="/login" className="m-3 btn btn-success">
+          <Link to="/login" className="m-3 btn btn-warning">
             Already a User
           </Link>
         </form>
