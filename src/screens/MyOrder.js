@@ -38,18 +38,9 @@ export default function MyOrder() {
       <div className="container">
         <h1>My Orders</h1>
         {orderData && orderData.length > 0 ? (
-          <p>
-            {orderData.map((val, i) => (
-              <div key={i}>
-                {val.map((val1, j) => (
-                  j !== 0 && <p key={j}>{val1}</p>
-                ))}
-              </div>
-            ))}
-          </p>)
+          <p>Wait,Order Data is Loading...</p>)
           : (<p>No records Found.</p>)}
       </div>
-
       <Footer />
     </div>
   );
