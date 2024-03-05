@@ -18,7 +18,6 @@ export default function MyOrder() {
           const data = response.data;
           setOrderData(data);
           console.log(data);
-          console.log(orderData);
         }
         else {
           console.log("failed to fetch the order");
