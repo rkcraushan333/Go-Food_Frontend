@@ -17,15 +17,15 @@ function App() {
       <Router>
         <div>
           <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/login" element={<Login />} />
-            <Route exact path="/signup" element={<Signup />} />
-            <Route exact path="/myOrder" element={<MyOrder />} />
+            <Route exact path="/" element={<Suspense fallback='Loading...'> <Home /></Suspense>} />
+            <Route exact path="/login" element={<Suspense fallback='Loading...'><Login /></Suspense>} />
+            <Route exact path="/signup" element={<Suspense fallback='Loading...'><Signup /></Suspense>} />
+            <Route exact path="/myOrder" element={<Suspense fallback='Loading...'><MyOrder /></Suspense>} />
           </Routes>
           {/* </Suspense> */}
         </div>
       </Router>
-    </CartProvider>
+    </CartProvider >
   );
 }
 
