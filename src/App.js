@@ -1,19 +1,15 @@
 import "../node_modules/bootstrap-dark-5/dist/css/bootstrap-dark.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
-// import React, { lazy, Suspense } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+import React, { lazy, Suspense } from "react";
 import { CartProvider } from "./components/ContextReducer";
-// const Home = lazy(() => import("./screens/Home"));
-// const Login = lazy(() => import("./screens/Login"));
-// const Signup = lazy(() => import("./screens/Singup"));
-// const MyOrder = lazy(() => import("./screens/MyOrder"));
-import Home from './screens/Home';
-import Login from './screens/Login';
-import MyOrder from './screens/MyOrder';
-import Signup from './screens/Singup';
+const Home = lazy(() => import("./screens/Home"));
+const Login = lazy(() => import("./screens/Login"));
+const Signup = lazy(() => import("./screens/Singup"));
+const MyOrder = lazy(() => import("./screens/MyOrder"));
 
 function App() {
   return (
