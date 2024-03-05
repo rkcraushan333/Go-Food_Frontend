@@ -42,7 +42,7 @@ export default function MyOrder() {
             <p>
               Wait,Order Data is Loading...
               <br />
-              (Total Previous of orders= {orderData.length})
+              (Total No. of Previous orders= {orderData.length})
             </p>
           )
           : (<p>No records Found.</p>)}
