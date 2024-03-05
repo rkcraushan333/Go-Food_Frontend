@@ -40,7 +40,6 @@ export default function MyOrder() {
         {orderData && orderData.length > 0 ? (
           <p>Your Order is Loading... </p>)
           : (<p>No records Found.</p>)}
-        {console.log(orderData)}
       </div>
 
       <Footer />
