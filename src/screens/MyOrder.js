@@ -17,7 +17,9 @@ export default function MyOrder() {
         if (response.status === 200) {
           const data = response.data;
           setOrderData(data);
-          console.log(data.order_data);
+          for (let [key, value] in data) {
+            console.log(key, value);
+          }
         }
         else {
           console.log("failed to fetch the order");
