@@ -16,8 +16,6 @@ export default function MyOrder() {
       .then((response) => {
         if (response.status === 200) {
           const data = response.data;
-          console.log("Checking the data");
-          console.log(data);
           setOrderData(data);
         }
         else {
