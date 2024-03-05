@@ -16,13 +16,9 @@ function App() {
     <CartProvider>
       <Router>
         <div>
-          <Routes>
-            <Route exact path="/" element={<Suspense fallback={<div>Loading...</div>}><Home /></Suspense>} />
-            {/* <Route exact path="/login" element={<Suspense fallback={<div>Loading...</div>}><Login /></Suspense>} /> */}
+          <Routes><Route exact path="/" element={<Home />} />
             <Route exact path="/login" element={<Login />} />
-            {/* <Route exact path="/signup" element={<Suspense fallback={<div>Loading...</div>}><Signup /></Suspense>} /> */}
             <Route exact path="/signup" element={<Signup />} />
-            {/* <Route exact path="/myOrder" element={<Suspense fallback={<div>Loading...</div>}><MyOrder /></Suspense>} /> */}
             <Route exact path="/myOrder" element={<MyOrder />} />
           </Routes>
           {/* </Suspense> */}
