@@ -41,6 +41,7 @@ export default function MyOrder() {
           (
             <p>
               Wait,Order Data is Loading...
+              <br />
               (Total Previous of orders= {orderData.length})
             </p>
           )
