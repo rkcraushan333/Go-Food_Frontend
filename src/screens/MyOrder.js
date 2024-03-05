@@ -17,7 +17,6 @@ export default function MyOrder() {
         if (response.status === 200) {
           const data = response.data;
           setOrderData(data);
-          console.log(orderData);
         }
         else {
           console.log("failed to fetch the order");
@@ -30,7 +29,7 @@ export default function MyOrder() {
 
   useEffect(() => {
     fetchMyOrder();
-  },);
+  }, []);
 
   return (
     <div>
