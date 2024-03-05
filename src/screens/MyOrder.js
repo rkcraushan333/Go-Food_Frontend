@@ -30,7 +30,7 @@ export default function MyOrder() {
 
   useEffect(() => {
     fetchMyOrder();
-  }, []);
+  },);
 
   return (
     <div>
