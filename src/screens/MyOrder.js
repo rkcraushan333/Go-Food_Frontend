@@ -16,8 +16,8 @@ export default function MyOrder() {
       .then((response) => {
         if (response.status === 200) {
           const data = response.data;
-          console.log(data);
           setOrderData(data);
+          console.log(orderData);
         }
         else {
           console.log("failed to fetch the order");
