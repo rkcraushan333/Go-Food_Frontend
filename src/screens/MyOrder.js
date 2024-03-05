@@ -37,8 +37,13 @@ export default function MyOrder() {
 
       <div className="container">
         <h1>My Orders</h1>
-        {orderData && orderData.length > 0 ? (
-          <p>Wait,Order Data is Loading... size = {orderData.length}</p>)
+        {orderData && orderData.length > 0 ?
+          (
+            <p>
+              Wait,Order Data is Loading...
+              (Total Previous of orders= {orderData.length})
+            </p>
+          )
           : (<p>No records Found.</p>)}
       </div>
       <Footer />
