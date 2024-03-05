@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import axios from "axios";
 
 export default function MyOrder() {
-  const [orderData, setOrderData] = useState({});
+  const [orderData, setOrderData] = useState([]);
 
   const URL = "https://go-food-backend-lgih.onrender.com/api/myOrderData";
 
@@ -17,7 +17,6 @@ export default function MyOrder() {
         if (response.status === 200) {
           const data = response.data;
           setOrderData(data);
-          console.log(orderData);
         }
         else {
           console.log("failed to fetch the order");
